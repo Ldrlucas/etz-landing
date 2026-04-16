@@ -591,9 +591,15 @@
   /* CASES */
   .cases-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 4px;
     margin-top: 60px;
+  }
+
+  @media (max-width: 900px) {
+    .cases-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .case-card {
@@ -632,6 +638,16 @@
     font-weight: 800;
     color: var(--white);
     margin-bottom: 8px;
+  }
+
+  .case-logo-img {
+    max-width: 160px;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
   }
 
   .case-image-inner .logo-sub {
@@ -1236,8 +1252,7 @@
     <div class="case-card reveal reveal-delay-1">
       <div class="case-image" style="background: linear-gradient(135deg, #091410 0%, #0f2018 100%);">
         <div class="case-image-inner">
-          <div class="logo-placeholder">MF</div>
-          <div class="logo-sub">Dr. Márcio Fiorentini</div>
+          <img src="Logo_Marcinho_Sem_Fundo.png" alt="Dr. Márcio Fiorentini" class="case-logo-img">
         </div>
         <div class="case-overlay"></div>
       </div>
@@ -1250,8 +1265,7 @@
     <div class="case-card reveal reveal-delay-2">
       <div class="case-image" style="background: linear-gradient(135deg, #0a1410 0%, #0f2018 100%);">
         <div class="case-image-inner">
-          <div class="logo-placeholder" style="color: #4a8c61;">alena</div>
-          <div class="logo-sub">Instituto</div>
+          <img src="Logo_sem_fundo.png" alt="Instituto Alena" class="case-logo-img">
         </div>
         <div class="case-overlay"></div>
       </div>
@@ -1264,8 +1278,7 @@
     <div class="case-card reveal reveal-delay-3">
       <div class="case-image" style="background: linear-gradient(135deg, #091410 0%, #122018 100%);">
         <div class="case-image-inner">
-          <div class="logo-placeholder">VACINUM</div>
-          <div class="logo-sub">Clínica de Vacinas</div>
+          <img src="Logo_branca_sem_fundo.png" alt="Vacinum" class="case-logo-img">
         </div>
         <div class="case-overlay"></div>
       </div>
@@ -1273,6 +1286,19 @@
         <div class="case-client">Vacinum</div>
         <div class="case-niche">Clínica de Vacinas</div>
         <p class="case-result">Estrutura completa de anúncios + landing page. Crescimento consistente de novos pacientes mês a mês.</p>
+      </div>
+    </div>
+    <div class="case-card reveal reveal-delay-3">
+      <div class="case-image" style="background: linear-gradient(135deg, #0f0e09 0%, #1a1810 100%);">
+        <div class="case-image-inner">
+          <img src="logo_sem_fundo_cross_pilates.png" alt="Cross Pilates" class="case-logo-img">
+        </div>
+        <div class="case-overlay"></div>
+      </div>
+      <div class="case-body">
+        <div class="case-client">Cross Pilates</div>
+        <div class="case-niche">Studio de Pilates</div>
+        <p class="case-result">Geração de leads qualificados para aulas experimentais com custo por lead reduzido mês a mês.</p>
       </div>
     </div>
   </div>
