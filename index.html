@@ -133,71 +133,38 @@
     overflow: hidden;
   }
 
-  .hero-bg {
+  /* HERO SLIDESHOW */
+  .hero-slideshow {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(45,90,61,0.18) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(45,90,61,0.08) 0%, transparent 60%),
-                radial-gradient(ellipse 40% 40% at 80% 20%, rgba(45,90,61,0.06) 0%, transparent 60%);
-    animation: breathe 8s ease-in-out infinite;
+    z-index: 0;
   }
 
-  .hero-smoke {
+  .hero-slide {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%) brightness(0.30);
+    opacity: 0;
+    transition: opacity 1.4s ease-in-out;
+  }
+
+  .hero-slide.active { opacity: 1; }
+
+  .hero-slide:nth-child(1) { background-image: url('./roxana-popovici-cZ0WYsBFHhs-unsplash.jpg'); }
+  .hero-slide:nth-child(2) { background-image: url('./vitaly-gariev-7Z2Xf8Bb7iM-unsplash.jpg'); }
+  .hero-slide:nth-child(3) { background-image: url('./toa-heftiba-a9pFSC8dTlo-unsplash.jpg'); }
+  .hero-slide:nth-child(4) { background-image: url('./ahmet-kurt-0xn-8kRWOhE-unsplash.jpg'); }
+  .hero-slide:nth-child(5) { background-image: url('./cdc-uN8TV9Pw2ik-unsplash.jpg'); }
+  .hero-slide:nth-child(6) { background-image: url('./vitaly-gariev-6qN9yEK5k9U-unsplash.jpg'); }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(45,90,61,0.20) 0%, transparent 70%);
+    z-index: 2;
     pointer-events: none;
-  }
-
-  .smoke-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    animation: smokeFloat linear infinite;
-  }
-
-  .smoke-blob:nth-child(1) {
-    width: 700px; height: 350px;
-    left: 10%; top: 20%;
-    background: radial-gradient(ellipse, rgba(74,140,97,0.35) 0%, rgba(45,90,61,0.15) 50%, transparent 70%);
-    animation-duration: 20s;
-    animation-delay: 0s;
-  }
-  .smoke-blob:nth-child(2) {
-    width: 550px; height: 280px;
-    left: 45%; top: 40%;
-    background: radial-gradient(ellipse, rgba(74,140,97,0.28) 0%, rgba(45,90,61,0.10) 50%, transparent 70%);
-    animation-duration: 26s;
-    animation-delay: -8s;
-  }
-  .smoke-blob:nth-child(3) {
-    width: 450px; height: 240px;
-    left: 60%; top: 15%;
-    background: radial-gradient(ellipse, rgba(200,245,208,0.20) 0%, rgba(74,140,97,0.08) 50%, transparent 70%);
-    animation-duration: 22s;
-    animation-delay: -14s;
-  }
-  .smoke-blob:nth-child(4) {
-    width: 500px; height: 220px;
-    left: -5%; top: 50%;
-    background: radial-gradient(ellipse, rgba(45,90,61,0.30) 0%, rgba(74,140,97,0.10) 50%, transparent 70%);
-    animation-duration: 30s;
-    animation-delay: -4s;
-  }
-  .smoke-blob:nth-child(5) {
-    width: 580px; height: 290px;
-    left: 65%; top: 55%;
-    background: radial-gradient(ellipse, rgba(74,140,97,0.25) 0%, rgba(45,90,61,0.08) 50%, transparent 70%);
-    animation-duration: 18s;
-    animation-delay: -10s;
-  }
-
-  @keyframes smokeFloat {
-    0%   { opacity: 0.4; transform: translateY(0px) translateX(0px) scale(1); }
-    15%  { opacity: 0.9; }
-    50%  { opacity: 0.7; transform: translateY(-50px) translateX(25px) scale(1.15); }
-    85%  { opacity: 0.5; }
-    100% { opacity: 0.4; transform: translateY(-100px) translateX(-15px) scale(1.25); }
   }
 
   @keyframes breathe {
@@ -216,7 +183,7 @@
     color: var(--white-dim);
     margin-bottom: 36px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     animation: fadeUp 0.8s ease both;
   }
 
@@ -241,7 +208,7 @@
     letter-spacing: -0.04em;
     margin-bottom: 28px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     animation: fadeUp 0.8s ease 0.1s both;
     max-width: 1000px;
   }
@@ -253,7 +220,7 @@
     line-height: 1.6;
     margin-bottom: 48px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     animation: fadeUp 0.8s ease 0.2s both;
     font-weight: 300;
   }
@@ -264,7 +231,7 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     animation: fadeUp 0.8s ease 0.3s both;
   }
 
@@ -1098,14 +1065,15 @@
 
 <!-- HERO -->
 <div class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-smoke">
-    <div class="smoke-blob"></div>
-    <div class="smoke-blob"></div>
-    <div class="smoke-blob"></div>
-    <div class="smoke-blob"></div>
-    <div class="smoke-blob"></div>
+  <div class="hero-slideshow">
+    <div class="hero-slide active"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
   </div>
+  <div class="hero-overlay"></div>
   <div class="hero-tag">Especialistas em clínicas de saúde</div>
   <h1>Anúncios que lotam a agenda da sua clínica</h1>
   <p class="hero-sub">Gestão estratégica de Facebook e Instagram Ads para clínicas de saúde. Mais pacientes qualificados, menos verba desperdiçada.</p>
@@ -1450,7 +1418,7 @@
 <footer>
   <div class="footer-left">
     <a href="#" class="footer-logo">ET<span>Z</span></a>
-    <span class="footer-info">© 2026 ETZ Publicidade Digital</span>
+    <span class="footer-info">© 2026 ETZ Publicidade Digital · Marechal Cândido Rondon, PR</span>
   </div>
   <div class="footer-links">
     <a href="#servicos">Serviços</a>
@@ -1500,6 +1468,15 @@
       nav.style.borderBottomColor = 'rgba(245,245,240,0.08)';
     }
   });
+
+  // Hero slideshow
+  const slides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+  setInterval(() => {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }, 4000);
 </script>
 
 </body>
