@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -153,53 +152,52 @@
   .smoke-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0;
+    filter: blur(90px);
     animation: smokeFloat linear infinite;
   }
 
   .smoke-blob:nth-child(1) {
-    width: 600px; height: 300px;
-    left: 15%; top: 30%;
-    background: radial-gradient(ellipse, rgba(190,225,205,0.18) 0%, rgba(170,210,190,0.06) 50%, transparent 70%);
+    width: 700px; height: 350px;
+    left: 10%; top: 20%;
+    background: radial-gradient(ellipse, rgba(74,140,97,0.35) 0%, rgba(45,90,61,0.15) 50%, transparent 70%);
     animation-duration: 20s;
     animation-delay: 0s;
   }
   .smoke-blob:nth-child(2) {
-    width: 500px; height: 250px;
-    left: 40%; top: 45%;
-    background: radial-gradient(ellipse, rgba(180,215,195,0.14) 0%, rgba(160,200,180,0.05) 50%, transparent 70%);
+    width: 550px; height: 280px;
+    left: 45%; top: 40%;
+    background: radial-gradient(ellipse, rgba(74,140,97,0.28) 0%, rgba(45,90,61,0.10) 50%, transparent 70%);
     animation-duration: 26s;
     animation-delay: -8s;
   }
   .smoke-blob:nth-child(3) {
-    width: 400px; height: 220px;
-    left: 55%; top: 25%;
-    background: radial-gradient(ellipse, rgba(200,230,210,0.12) 0%, rgba(180,215,195,0.04) 50%, transparent 70%);
+    width: 450px; height: 240px;
+    left: 60%; top: 15%;
+    background: radial-gradient(ellipse, rgba(200,245,208,0.20) 0%, rgba(74,140,97,0.08) 50%, transparent 70%);
     animation-duration: 22s;
     animation-delay: -14s;
   }
   .smoke-blob:nth-child(4) {
-    width: 450px; height: 200px;
-    left: 5%; top: 50%;
-    background: radial-gradient(ellipse, rgba(175,210,190,0.1) 0%, rgba(155,195,175,0.04) 50%, transparent 70%);
+    width: 500px; height: 220px;
+    left: -5%; top: 50%;
+    background: radial-gradient(ellipse, rgba(45,90,61,0.30) 0%, rgba(74,140,97,0.10) 50%, transparent 70%);
     animation-duration: 30s;
     animation-delay: -4s;
   }
   .smoke-blob:nth-child(5) {
-    width: 520px; height: 260px;
+    width: 580px; height: 290px;
     left: 65%; top: 55%;
-    background: radial-gradient(ellipse, rgba(185,220,200,0.13) 0%, rgba(165,205,185,0.05) 50%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(74,140,97,0.25) 0%, rgba(45,90,61,0.08) 50%, transparent 70%);
     animation-duration: 18s;
     animation-delay: -10s;
   }
 
   @keyframes smokeFloat {
-    0%   { opacity: 0; transform: translateY(0px) translateX(0px) scale(1); }
-    15%  { opacity: 1; }
-    50%  { opacity: 0.8; transform: translateY(-40px) translateX(20px) scale(1.1); }
-    85%  { opacity: 0.4; }
-    100% { opacity: 0; transform: translateY(-80px) translateX(-10px) scale(1.2); }
+    0%   { opacity: 0.4; transform: translateY(0px) translateX(0px) scale(1); }
+    15%  { opacity: 0.9; }
+    50%  { opacity: 0.7; transform: translateY(-50px) translateX(25px) scale(1.15); }
+    85%  { opacity: 0.5; }
+    100% { opacity: 0.4; transform: translateY(-100px) translateX(-15px) scale(1.25); }
   }
 
   @keyframes breathe {
@@ -1452,7 +1450,7 @@
 <footer>
   <div class="footer-left">
     <a href="#" class="footer-logo">ET<span>Z</span></a>
-    <span class="footer-info">© 2026 ETZ Publicidade Digital · Marechal Cândido Rondon, PR</span>
+    <span class="footer-info">© 2026 ETZ Publicidade Digital</span>
   </div>
   <div class="footer-links">
     <a href="#servicos">Serviços</a>
