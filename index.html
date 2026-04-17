@@ -439,32 +439,55 @@
   }
 
   .about-image {
-    aspect-ratio: 4/5;
-    background: var(--black-3);
-    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .about-photo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .about-photo-wrap {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
   }
 
-  .about-image-placeholder {
-    text-align: center;
-    color: var(--white-dim);
-    padding: 40px;
-  }
-
-  .about-image-placeholder .icon {
-    font-size: 48px;
-    margin-bottom: 16px;
+  .about-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
     display: block;
   }
 
-  .about-image-placeholder p {
-    font-size: 14px;
-    line-height: 1.5;
+  .about-photo-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    text-align: center;
+  }
+
+  .about-photo-role {
+    font-size: 12px;
+    color: var(--green-light);
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: -6px;
   }
 
   /* PROCESS */
@@ -1155,9 +1178,21 @@
       </div>
     </div>
     <div class="about-image reveal reveal-delay-2">
-      <div class="about-image-placeholder">
-        <span class="icon">📸</span>
-        <p>Substitua por uma foto sua e da Raquel</p>
+      <div class="about-photos">
+        <div class="about-photo-card">
+          <div class="about-photo-wrap">
+            <img src="lucas.png" alt="Lucas Duarte">
+          </div>
+          <div class="about-photo-name">Lucas Duarte</div>
+          <div class="about-photo-role">Gestor de Tráfego</div>
+        </div>
+        <div class="about-photo-card">
+          <div class="about-photo-wrap">
+            <img src="raquel.png" alt="Raquel Duarte">
+          </div>
+          <div class="about-photo-name">Raquel Duarte</div>
+          <div class="about-photo-role">Social Media</div>
+        </div>
       </div>
     </div>
   </div>
