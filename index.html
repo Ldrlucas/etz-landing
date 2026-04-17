@@ -81,17 +81,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    color: var(--white);
     text-decoration: none;
-    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
   }
 
-  .nav-logo span {
-    color: var(--green-light);
+  .nav-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    mix-blend-mode: screen;
   }
+
+  .nav-logo span { display: none; }
 
   .nav-links {
     display: flex;
@@ -1089,15 +1091,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .footer-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: -0.03em;
     text-decoration: none;
+    display: flex;
+    align-items: center;
   }
 
-  .footer-logo span { color: var(--green-light); }
+  .footer-logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+    mix-blend-mode: screen;
+  }
+
+  .footer-logo span { display: none; }
 
   .footer-info {
     font-size: 13px;
@@ -1204,7 +1210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- NAVBAR -->
 <nav>
-  <a href="#" class="nav-logo">ET<span>Z</span></a>
+  <a href="#" class="nav-logo"><img src="logoetz1.png" alt="ETZ Publicidade Digital"></a>
   <ul class="nav-links">
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#resultados">Resultados</a></li>
@@ -1590,7 +1596,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    <a href="#" class="footer-logo">ET<span>Z</span></a>
+    <a href="#" class="footer-logo"><img src="logoetz1.png" alt="ETZ Publicidade Digital"></a>
     <span class="footer-info">© 2026 ETZ Publicidade Digital</span>
   </div>
   <div class="footer-links">
