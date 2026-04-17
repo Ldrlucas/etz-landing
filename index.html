@@ -404,7 +404,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   section {
     padding: 120px 48px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
   }
 
   .section-tag {
@@ -1162,31 +1164,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* MOBILE */
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 16px 20px; }
     .nav-links { display: none; }
-    section { padding: 80px 24px; }
-    .hero { padding: 120px 24px 60px; }
+    section { padding: 60px 20px; width: 100%; box-sizing: border-box; }
+    .hero { padding: 120px 20px 60px; }
     .about-grid,
     .process-inner,
     .faq-grid,
-    .testimonials-header { grid-template-columns: 1fr; gap: 48px; }
+    .testimonials-header { grid-template-columns: 1fr; gap: 40px; }
     .services-grid,
-    .cases-grid,
     .testimonials-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .cases-grid { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr 1fr; font-size: 14px; overflow: hidden; }
+    .stat-number { font-size: 28px; }
     .process-section,
-    .testimonials-section { padding: 80px 24px; }
-    .cta-section { padding: 80px 24px; }
-    footer { flex-direction: column; gap: 24px; text-align: center; }
+    .testimonials-section { padding: 60px 20px; }
+    .cta-section { padding: 60px 20px; }
+    footer { flex-direction: column; gap: 24px; text-align: center; padding: 40px 20px; }
     .footer-left { flex-direction: column; gap: 8px; }
     .process-title { position: static; }
     .faq-title { position: static; }
     .about-photos { grid-template-columns: 1fr 1fr; gap: 8px; }
     .about-photo-name { font-size: 13px; }
-    .about-photo-role { font-size: 11px; }
-    h1 { font-size: clamp(40px, 10vw, 72px); }
-    .about-title { font-size: clamp(36px, 8vw, 60px); }
-    .cases-grid { grid-template-columns: 1fr 1fr; }
+    .about-photo-role { font-size: 10px; }
+    .tags-list { gap: 8px; }
+    .tag { font-size: 12px; padding: 6px 12px; }
+    h1 { font-size: clamp(36px, 9vw, 64px) !important; }
+    h2 { font-size: clamp(28px, 7vw, 48px) !important; }
+    .about-title { font-size: clamp(32px, 8vw, 56px) !important; }
+    p, .about-text { word-break: break-word; overflow-wrap: break-word; max-width: 100%; }
   }
 </style>
 </head>
