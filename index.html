@@ -140,6 +140,19 @@
     z-index: 0;
   }
 
+  .hero-slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+    animation: shimmer 6s ease-in-out infinite;
+    animation-delay: 0.5s;
+    pointer-events: none;
+    z-index: 10;
+  }
+
   .hero-slide {
     position: absolute;
     inset: 0;
@@ -238,6 +251,13 @@
     animation: fadeUp 0.8s ease 0.3s both;
   }
 
+  @keyframes shimmer {
+    0%   { transform: translateX(-150%) skewX(-15deg); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateX(350%) skewX(-15deg); opacity: 0; }
+  }
+
   .btn-primary {
     background: var(--white);
     color: var(--black);
@@ -252,6 +272,20 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%);
+    animation: shimmer 3s ease-in-out infinite;
+    animation-delay: 1s;
+    pointer-events: none;
   }
 
   .btn-primary:hover {
@@ -275,6 +309,20 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+    animation: shimmer 3s ease-in-out infinite;
+    animation-delay: 1.8s;
+    pointer-events: none;
   }
 
   .btn-secondary:hover {
@@ -465,6 +513,19 @@
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border);
+    position: relative;
+  }
+
+  .about-photo-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.08) 50%, transparent 100%);
+    animation: shimmer 4s ease-in-out infinite;
+    animation-delay: 2s;
+    pointer-events: none;
   }
 
   .about-photo-wrap img {
@@ -762,7 +823,23 @@
     border-radius: 20px;
     padding: 36px;
     transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
   }
+
+  .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+    animation: shimmer 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .testimonial-card:nth-child(2)::before { animation-delay: 1.2s; }
+  .testimonial-card:nth-child(3)::before { animation-delay: 2.4s; }
 
   .testimonial-card:hover {
     border-color: rgba(74,140,97,0.2);
