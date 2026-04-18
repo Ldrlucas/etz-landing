@@ -1187,8 +1187,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .services-grid,
     .testimonials-grid { grid-template-columns: 1fr; }
     .cases-grid { grid-template-columns: 1fr 1fr; }
-    .stats-grid { grid-template-columns: 1fr 1fr 1fr; font-size: 14px; overflow: hidden; }
-    .stat-number { font-size: 28px; }
+    .stats-grid { grid-template-columns: 1fr 1fr 1fr; overflow: hidden; }
+    .stat { padding: 20px 8px; }
+    .stat-number { font-size: 22px; }
+    .stat-label { font-size: 11px; }
     .process-section,
     .testimonials-section { padding: 60px 20px; }
     .cta-section { padding: 60px 20px; }
@@ -1205,6 +1207,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h2 { font-size: clamp(28px, 7vw, 48px) !important; }
     .about-title { font-size: clamp(32px, 8vw, 56px) !important; }
     p, .about-text { word-break: break-word; overflow-wrap: break-word; max-width: 100%; }
+    .case-logo-img { max-width: 120px; max-height: 70px; }
+    .case-logo-img.logo-marcio { max-width: 100px; max-height: 100px; }
+  }
+
+  @media (max-width: 400px) {
+    .stats-grid { grid-template-columns: 1fr; }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: none; }
+    .stat-number { font-size: 32px; }
+    .stat-label { font-size: 13px; }
+    .cases-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -1308,7 +1321,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="about-photo-wrap">
             <img src="raquel.png" alt="Raquel Duarte">
           </div>
-          <div class="about-photo-name">Raquel Duarte</div>
+          <div class="about-photo-name">Raquel de Souza</div>
           <div class="about-photo-role">Gestão de Redes & Conteúdo</div>
         </div>
       </div>
