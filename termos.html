@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso — ETZ Publicidade Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --preto: #080808;
+      --verde: #2d5a3d;
+      --verde-claro: #4a8c61;
+      --branco: #f5f5f0;
+      --cinza: #1a1a1a;
+      --cinza-texto: #a0a0a0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74,140,97,0.15);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--verde-claro);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-back {
+      font-size: 0.85rem;
+      color: var(--cinza-texto);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--verde-claro); }
+
+    .page-header {
+      position: relative;
+      padding: 5rem 2rem 3rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .page-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--verde-claro);
+      border: 1px solid rgba(74,140,97,0.4);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--branco);
+      margin-bottom: 1rem;
+    }
+
+    .page-meta {
+      font-size: 0.85rem;
+      color: var(--cinza-texto);
+    }
+
+    .page-meta span { color: var(--verde-claro); }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--verde-claro), transparent);
+      margin: 2rem 0;
+    }
+
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--verde-claro);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--branco);
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      color: rgba(245,245,240,0.75);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0.75rem 0 1rem;
+      padding: 0;
+    }
+
+    ul li {
+      color: rgba(245,245,240,0.75);
+      font-size: 0.95rem;
+      padding: 0.35rem 0 0.35rem 1.4rem;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--verde-claro);
+      font-size: 0.8rem;
+    }
+
+    strong { color: var(--branco); font-weight: 500; }
+
+    a {
+      color: var(--verde-claro);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(74,140,97,0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--verde-claro); }
+
+    .highlight-box {
+      background: rgba(45,90,61,0.12);
+      border: 1px solid rgba(74,140,97,0.2);
+      border-left: 3px solid var(--verde-claro);
+      border-radius: 4px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p { margin: 0; }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.8rem; color: var(--cinza-texto); margin: 0; }
+    footer a { color: var(--verde-claro); border: none; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem; }
+      .page-header, .content { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://etzdigital.com.br" class="nav-logo">ETZ</a>
+    <a href="https://etzdigital.com.br" class="nav-back">← Voltar para o site</a>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-tag">Documento Legal</div>
+    <h1 class="page-title">Termos de Uso</h1>
+    <p class="page-meta">Última atualização: <span>Abril de 2026</span></p>
+    <div class="divider"></div>
+  </div>
+
+  <div class="content">
+
+    <div class="section">
+      <div class="section-number">01</div>
+      <h2>Aceitação dos Termos</h2>
+      <p>Ao acessar ou utilizar os canais digitais da <strong>ETZ Publicidade Digital</strong> — incluindo o site <a href="https://etzdigital.com.br">etzdigital.com.br</a> e o quiz de diagnóstico em <a href="https://diagnostico.etzdigital.com.br">diagnostico.etzdigital.com.br</a> — você declara que leu, compreendeu e concorda com estes Termos de Uso.</p>
+      <p>Caso não concorde com qualquer parte destes termos, recomendamos que não utilize nossos canais.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">02</div>
+      <h2>Sobre a ETZ Publicidade Digital</h2>
+      <p>A <strong>ETZ Publicidade Digital</strong>, inscrita no CNPJ sob o nº <strong>52.422.332/0001-68</strong> (Raquel Oliveira de Souza), é uma agência de marketing digital especializada em gestão de tráfego pago e estratégias digitais para o setor de saúde, sediada em Toledo, Paraná.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">03</div>
+      <h2>Uso dos Canais Digitais</h2>
+      <p>Nossos canais digitais são disponibilizados para fins informativos e de prospecção de serviços. Ao utilizá-los, você se compromete a:</p>
+      <ul>
+        <li>Fornecer informações verdadeiras e atualizadas nos formulários de contato</li>
+        <li>Não utilizar os canais para fins ilícitos, fraudulentos ou que violem direitos de terceiros</li>
+        <li>Não tentar acessar sistemas, bancos de dados ou áreas restritas sem autorização</li>
+        <li>Não reproduzir, copiar ou distribuir o conteúdo destes canais sem autorização expressa</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-number">04</div>
+      <h2>Quiz de Diagnóstico Digital</h2>
+      <p>O quiz disponível em <a href="https://diagnostico.etzdigital.com.br">diagnostico.etzdigital.com.br</a> é uma ferramenta de autoavaliação criada para auxiliar gestores de clínicas e negócios de saúde a identificarem oportunidades de melhoria em suas estratégias digitais.</p>
+      <div class="highlight-box">
+        <p>Os resultados do quiz são indicativos e baseados nas respostas fornecidas pelo usuário. Não constituem diagnóstico definitivo, auditoria formal ou garantia de resultados futuros.</p>
+      </div>
+      <p>Ao concluir o quiz e informar seus dados de contato, você autoriza a ETZ Publicidade Digital a entrar em contato via WhatsApp e/ou e-mail para apresentar soluções relevantes ao seu perfil.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">05</div>
+      <h2>Propriedade Intelectual</h2>
+      <p>Todo o conteúdo disponibilizado nos canais da ETZ Publicidade Digital — incluindo textos, imagens, logotipos, layouts, código e materiais visuais — é de propriedade exclusiva da ETZ Publicidade Digital ou licenciado por seus criadores.</p>
+      <p>É vedada qualquer reprodução, adaptação, distribuição ou uso comercial sem autorização prévia e por escrito.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">06</div>
+      <h2>Limitação de Responsabilidade</h2>
+      <p>A ETZ Publicidade Digital não se responsabiliza por:</p>
+      <ul>
+        <li>Decisões tomadas com base nas informações ou resultados apresentados em seus canais</li>
+        <li>Resultados de campanhas de marketing, que dependem de múltiplos fatores externos</li>
+        <li>Indisponibilidade temporária dos canais por manutenção ou fatores técnicos</li>
+        <li>Danos causados por vírus, ataques ou falhas de terceiros</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <div class="section-number">07</div>
+      <h2>Links Externos</h2>
+      <p>Nossos canais podem conter links para sites de terceiros (plataformas sociais, parceiros, etc.). Esses links são fornecidos por conveniência e não implicam endosso ou responsabilidade pelo conteúdo externo. Recomendamos que você consulte os termos e políticas de cada plataforma acessada.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">08</div>
+      <h2>Privacidade e Dados Pessoais</h2>
+      <p>O tratamento dos dados pessoais coletados através de nossos canais é regido pela nossa <a href="/privacidade.html">Política de Privacidade</a>, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018). Recomendamos a leitura integral desse documento.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">09</div>
+      <h2>Modificações dos Termos</h2>
+      <p>A ETZ Publicidade Digital reserva-se o direito de alterar estes Termos de Uso a qualquer momento. As alterações entram em vigor na data de sua publicação. O uso continuado dos canais após as modificações implica aceitação dos novos termos.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">10</div>
+      <h2>Lei Aplicável e Foro</h2>
+      <p>Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas decorrentes do uso de nossos canais serão submetidas ao foro da comarca de <strong>Toledo, Paraná</strong>, salvo disposição legal em contrário.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-number">11</div>
+      <h2>Contato</h2>
+      <p>Para dúvidas sobre estes Termos de Uso, entre em contato:</p>
+      <ul>
+        <li><strong>E-mail:</strong> <a href="mailto:contato@etzdigital.com.br">contato@etzdigital.com.br</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/5545998070523" target="_blank">+55 45 99807-0523</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 ETZ Publicidade Digital — <a href="/privacidade.html">Política de Privacidade</a> · <a href="/termos.html">Termos de Uso</a></p>
+  </footer>
+
+</body>
+</html>
