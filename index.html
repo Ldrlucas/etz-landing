@@ -623,7 +623,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .portfolio-stage {
     display: grid;
-    grid-template-columns: 120px 1fr 280px;
+    grid-template-columns: 190px 1fr 280px;
     gap: 60px;
     align-items: center;
   }
@@ -632,18 +632,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .port-thumbs {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
 
   .port-thumb {
-    width: 100%;
-    aspect-ratio: 9/6;
-    border-radius: 10px;
+    width: 175px;
+    height: 150px;
+    border-radius: 12px;
     border: 1px solid var(--border);
     overflow: hidden;
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease;
+    flex-shrink: 0;
   }
 
   .port-thumb img {
@@ -683,29 +684,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   .phone-3d {
-    width: 220px;
-    height: 420px;
+    width: 210px;
+    height: 560px;
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateY(-20deg) rotateX(5deg);
-    transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-    cursor: pointer;
-    filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.7));
+    animation: phoneSwing 7s ease-in-out infinite;
   }
 
-  .phone-3d:hover {
-    transform: rotateY(-8deg) rotateX(2deg) scale(1.05);
+  @keyframes phoneSwing {
+    0%   {
+      transform: rotateY(-30deg) rotateX(4deg);
+      filter: drop-shadow(20px 20px 40px rgba(0,0,0,0.8));
+    }
+    50%  {
+      transform: rotateY(30deg) rotateX(-4deg);
+      filter: drop-shadow(-20px 20px 40px rgba(0,0,0,0.8));
+    }
+    100% {
+      transform: rotateY(-30deg) rotateX(4deg);
+      filter: drop-shadow(20px 20px 40px rgba(0,0,0,0.8));
+    }
   }
 
   .phone-body {
     position: absolute;
     inset: 0;
-    background: linear-gradient(145deg, #1e1e1e 0%, #0a0a0a 50%, #1a1a1a 100%);
-    border-radius: 40px;
-    border: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(160deg, #242424 0%, #080808 45%, #181818 100%);
+    border-radius: 44px;
+    border: 1px solid rgba(255,255,255,0.09);
     box-shadow:
-      inset 1px 1px 0 rgba(255,255,255,0.07),
-      inset -1px -1px 0 rgba(0,0,0,0.5);
+      inset 1px 1px 0 rgba(255,255,255,0.06),
+      inset -1px -1px 0 rgba(0,0,0,0.6);
     overflow: hidden;
   }
 
@@ -713,17 +722,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 55%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
-    border-radius: 40px 40px 0 0;
+    height: 45%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 100%);
+    border-radius: 44px 44px 0 0;
     pointer-events: none;
     z-index: 10;
   }
 
   .phone-screen {
     position: absolute;
-    top: 12px; left: 10px; right: 10px; bottom: 12px;
-    border-radius: 30px;
+    top: 10px; left: 7px; right: 7px; bottom: 10px;
+    border-radius: 36px;
     overflow: hidden;
     background: #000;
   }
@@ -731,40 +740,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .phone-scroll-img {
     width: 100%;
     display: block;
-    animation: phoneScrollAnim 12s ease-in-out infinite;
+    animation: phoneScrollAnim 14s ease-in-out infinite;
   }
 
   @keyframes phoneScrollAnim {
     0%    { transform: translateY(0); }
-    80%   { transform: translateY(calc(-100% + 395px)); }
-    93%   { transform: translateY(calc(-100% + 395px)); }
+    78%   { transform: translateY(calc(-100% + 540px)); }
+    92%   { transform: translateY(calc(-100% + 540px)); }
     100%  { transform: translateY(0); }
   }
 
   .phone-notch {
     position: absolute;
-    top: 16px; left: 50%;
+    top: 14px; left: 50%;
     transform: translateX(-50%);
-    width: 64px; height: 20px;
-    background: #0a0a0a;
-    border-radius: 0 0 14px 14px;
+    width: 80px; height: 24px;
+    background: #000;
+    border-radius: 100px;
     z-index: 20;
-    border: 1px solid rgba(255,255,255,0.05);
-    border-top: none;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
   }
 
-  /* brilho lateral 3D */
+  .phone-notch::after {
+    content: '';
+    position: absolute;
+    right: 10px; top: 50%;
+    transform: translateY(-50%);
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.05);
+  }
+
+  /* aresta 3D real — face lateral do celular */
   .phone-edge {
     position: absolute;
-    top: 5%; right: -14px;
-    width: 14px; height: 90%;
+    top: 3%; left: 100%;
+    width: 16px; height: 94%;
     background: linear-gradient(180deg,
-      rgba(255,255,255,0.06) 0%,
-      rgba(255,255,255,0.02) 40%,
-      rgba(255,255,255,0.05) 100%
+      rgba(255,255,255,0.09) 0%,
+      rgba(255,255,255,0.03) 40%,
+      rgba(255,255,255,0.07) 100%
     );
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 10px 10px 0;
     transform-origin: left center;
+    transform: rotateY(90deg);
+    backface-visibility: hidden;
+  }
+
+  .phone-edge::before {
+    content: '';
+    position: absolute;
+    top: 20%; right: 0;
+    width: 3px; height: 16%;
+    background: rgba(255,255,255,0.12);
+    border-radius: 2px;
   }
 
   /* INFO LADO DIREITO */
@@ -850,58 +880,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(4,8,6,0.94);
+    background: rgba(2,5,3,0.96);
     z-index: 9999;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .holo-overlay.open { display: flex; }
 
   .holo-modal {
     position: relative;
-    width: 90vw;
-    max-width: 860px;
-    padding: 60px 0 0;
+    width: 380px;
+    max-width: 90vw;
+    padding-top: 48px;
   }
 
   .holo-grid-bg {
     position: absolute;
-    inset: -80px;
+    inset: -100px;
     background-image:
-      linear-gradient(rgba(74,140,97,0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(74,140,97,0.05) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(74,140,97,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(74,140,97,0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
     pointer-events: none;
-    animation: gridPulse 4s ease-in-out infinite;
+    animation: gridPulse 5s ease-in-out infinite;
   }
 
   @keyframes gridPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.3; }
+    50%       { opacity: 0.9; }
   }
 
   .holo-close {
     position: absolute;
-    top: 10px; right: 0;
-    width: 38px; height: 38px;
+    top: 0; right: 0;
+    width: 36px; height: 36px;
     border-radius: 50%;
     background: rgba(245,245,240,0.05);
     border: 1px solid rgba(245,245,240,0.1);
-    color: var(--white-dim);
-    font-size: 16px;
+    color: rgba(245,245,240,0.6);
+    font-size: 14px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.2s;
     z-index: 10;
     font-family: sans-serif;
+    line-height: 1;
   }
 
   .holo-close:hover {
-    background: rgba(200,50,50,0.15);
-    border-color: rgba(200,50,50,0.3);
+    background: rgba(180,40,40,0.15);
+    border-color: rgba(180,40,40,0.3);
     color: var(--white);
   }
 
@@ -910,74 +941,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     z-index: 2;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
   }
 
   .holo-nav-btn {
-    width: 52px; height: 52px;
+    width: 38px; height: 38px;
     border-radius: 50%;
-    background: rgba(245,245,240,0.04);
-    border: 1px solid rgba(245,245,240,0.1);
-    color: var(--white-dim);
-    font-size: 20px;
+    background: rgba(245,245,240,0.03);
+    border: 1px solid rgba(245,245,240,0.08);
+    color: rgba(245,245,240,0.35);
+    font-size: 18px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.25s ease;
     flex-shrink: 0;
     font-family: sans-serif;
+    line-height: 1;
   }
 
   .holo-nav-btn:hover {
-    background: rgba(74,140,97,0.12);
-    border-color: rgba(74,140,97,0.35);
+    background: rgba(74,140,97,0.1);
+    border-color: rgba(74,140,97,0.3);
     color: var(--white);
-    transform: scale(1.08);
+    transform: scale(1.1);
   }
 
+  /* CARD — sem borda, só glow */
   .holo-card {
     flex: 1;
-    background: rgba(8,8,8,0.95);
-    border: 1px solid rgba(74,140,97,0.2);
-    border-radius: 20px;
+    border-radius: 14px;
     overflow: hidden;
     position: relative;
+    background: #050808;
+    transition: box-shadow 0.7s ease;
   }
 
-  /* linha de scan topo */
+  /* scan line animada */
   .holo-card::before {
     content: '';
     position: absolute;
     top: 0; left: -100%;
-    width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(74,140,97,0.8), rgba(200,245,208,0.9), rgba(74,140,97,0.8), transparent);
-    animation: holoScan 3s ease-in-out infinite;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255,255,255,0.15) 30%,
+      rgba(255,255,255,0.5) 50%,
+      rgba(255,255,255,0.15) 70%,
+      transparent 100%
+    );
+    animation: holoScan 4s ease-in-out infinite;
     z-index: 20;
   }
 
   @keyframes holoScan {
-    0%   { left: -100%; opacity: 0; }
-    10%  { opacity: 1; }
-    90%  { opacity: 1; }
-    100% { left: 100%; opacity: 0; }
+    0%   { left: -100%; }
+    100% { left: 100%; }
   }
 
-  /* cantos decorativos */
-  .holo-corner {
+  /* glow nas 4 bordas com cor dinâmica */
+  .glow-top {
     position: absolute;
-    width: 18px; height: 18px;
-    border-color: rgba(74,140,97,0.6);
-    border-style: solid;
-    z-index: 15;
+    top: 0; left: 0; right: 0;
+    height: 100px;
     pointer-events: none;
+    z-index: 6;
+    transition: background 0.7s ease;
   }
-  .holo-corner.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
-  .holo-corner.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
-  .holo-corner.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
-  .holo-corner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+  .glow-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 100px;
+    pointer-events: none;
+    z-index: 6;
+    transition: background 0.7s ease;
+  }
+  .glow-left {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 70px;
+    pointer-events: none;
+    z-index: 6;
+    transition: background 0.7s ease;
+  }
+  .glow-right {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 70px;
+    pointer-events: none;
+    z-index: 6;
+    transition: background 0.7s ease;
+  }
 
   .holo-screen-wrap {
     width: 100%;
-    height: 400px;
+    height: 560px;
     overflow: hidden;
     position: relative;
   }
@@ -985,100 +1042,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .holo-screen-img {
     width: 100%;
     display: block;
-    object-fit: cover;
-    object-position: top;
-    transition: opacity 0.35s ease;
+    animation: holoScrollAnim 18s ease-in-out infinite;
   }
 
-  /* scanlines overlay */
+  @keyframes holoScrollAnim {
+    0%    { transform: translateY(0); }
+    75%   { transform: translateY(calc(-100% + 560px)); }
+    90%   { transform: translateY(calc(-100% + 560px)); }
+    100%  { transform: translateY(0); }
+  }
+
+  .holo-screen-img.switching {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
   .holo-scanlines {
     position: absolute;
     inset: 0;
     background: repeating-linear-gradient(
-      0deg, transparent, transparent 3px,
-      rgba(0,0,0,0.07) 3px, rgba(0,0,0,0.07) 4px
+      0deg,
+      transparent, transparent 3px,
+      rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px
     );
     pointer-events: none;
     z-index: 5;
   }
 
-  /* reflexo leve no topo da imagem */
   .holo-screen-glow {
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 80px;
-    background: linear-gradient(180deg, rgba(74,140,97,0.08) 0%, transparent 100%);
+    height: 60px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
     pointer-events: none;
     z-index: 4;
   }
 
-  .holo-card-footer {
-    padding: 20px 28px;
-    border-top: 1px solid rgba(74,140,97,0.12);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .holo-card-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--white);
-    margin-bottom: 3px;
-  }
-
-  .holo-card-type {
-    font-size: 11px;
-    color: var(--green-light);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  .holo-counter {
-    font-family: 'Syne', sans-serif;
-    font-size: 13px;
-    color: var(--white-dim);
-    letter-spacing: 0.05em;
-  }
-
-  /* dots */
   .holo-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 18px;
     position: relative;
     z-index: 2;
   }
 
   .holo-dot {
-    height: 4px;
-    width: 20px;
+    height: 3px;
+    width: 18px;
     border-radius: 100px;
-    background: rgba(245,245,240,0.12);
+    background: rgba(245,245,240,0.1);
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
   .holo-dot.active {
-    background: var(--green-light);
-    box-shadow: 0 0 8px rgba(74,140,97,0.5);
-    width: 36px;
+    width: 32px;
+    background: rgba(245,245,240,0.5);
   }
 
-  /* animação de troca */
   @keyframes holoSlideIn {
-    from { opacity: 0; transform: translateX(40px) scale(0.97); }
-    to   { opacity: 1; transform: translateX(0) scale(1); }
+    from { opacity: 0; transform: translateX(30px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
   @keyframes holoSlideInLeft {
-    from { opacity: 0; transform: translateX(-40px) scale(0.97); }
-    to   { opacity: 1; transform: translateX(0) scale(1); }
+    from { opacity: 0; transform: translateX(-30px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 
-  .holo-card.slide-right { animation: holoSlideIn 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) forwards; }
-  .holo-card.slide-left  { animation: holoSlideInLeft 0.4s cubic-bezier(0.34, 1.2, 0.64, 1) forwards; }
+  .holo-card.slide-right { animation: holoSlideIn 0.35s ease forwards; }
+  .holo-card.slide-left  { animation: holoSlideInLeft 0.35s ease forwards; }
 
   /* MOBILE */
   @media (max-width: 768px) {
@@ -1116,12 +1150,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .portfolio-section { padding: 60px 20px; }
     .portfolio-stage { grid-template-columns: 1fr; gap: 32px; }
     .port-thumbs { flex-direction: row; gap: 8px; }
-    .port-thumb { width: 72px; }
+    .port-thumb { width: 90px; height: 76px; }
     .phone-scene { order: -1; }
-    .phone-3d { width: 180px; height: 340px; }
-    .holo-modal { width: 96vw; padding: 52px 0 0; }
-    .holo-screen-wrap { height: 260px; }
-    .holo-nav-btn { width: 40px; height: 40px; font-size: 16px; }
+    .phone-3d { width: 180px; height: 400px; }
+    .holo-modal { width: 92vw; max-width: 360px; padding: 52px 0 0; }
+    .holo-screen-wrap { height: 380px; }
+    .holo-nav-btn { width: 36px; height: 36px; font-size: 15px; }
   }
 
   @media (max-width: 400px) {
@@ -1444,21 +1478,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div style="flex: 1; position: relative;">
         <div class="holo-card" id="holoCard">
-          <div class="holo-corner tl"></div>
-          <div class="holo-corner tr"></div>
-          <div class="holo-corner bl"></div>
-          <div class="holo-corner br"></div>
+          <div class="glow-top"></div>
+          <div class="glow-bottom"></div>
+          <div class="glow-left"></div>
+          <div class="glow-right"></div>
           <div class="holo-screen-wrap">
             <img class="holo-screen-img" id="holoScreenImg" src="sitevacinum.png" alt="Preview">
             <div class="holo-screen-glow"></div>
             <div class="holo-scanlines"></div>
-          </div>
-          <div class="holo-card-footer">
-            <div>
-              <div class="holo-card-name" id="holoCardName">Vacinum</div>
-              <div class="holo-card-type" id="holoCardType">App + Landing Page · Toledo, PR</div>
-            </div>
-            <div class="holo-counter" id="holoCounter">1 / 3</div>
           </div>
         </div>
 
@@ -1682,7 +1709,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       holoType: 'App + Landing Page · Toledo, PR',
       desc: 'Plataforma digital completa para clínica de vacinas. Agendamento online, planos e app mobile com experiência fluida.',
       tags: ['React', 'Supabase', 'PWA'],
-      img: 'sitevacinum.png'
+      img: 'sitevacinum.png',
+      glow: 'rgba(30, 80, 160, 0.28)'  // azul — cor predominante Vacinum
     },
     {
       name: 'Dr. Márcio Fiorentini',
@@ -1690,7 +1718,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       holoType: 'Site Institucional · Osteopatia',
       desc: 'Site focado em conversão para clínica de osteopatia e medicina funcional integrativa. Design sofisticado e copy estratégico.',
       tags: ['Landing Page', 'Meta Ads', 'Conversão'],
-      img: 'site_drmarcio.png'
+      img: 'site_drmarcio.png',
+      glow: 'rgba(160, 120, 40, 0.25)' // dourado — cor predominante Dr. Márcio
     },
     {
       name: 'ETZ Publicidade',
@@ -1698,7 +1727,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       holoType: 'Site de Agência · Toledo, PR',
       desc: 'Site institucional dark/editorial para agência especializada em clínicas de saúde. Design, GTM e tracking completo.',
       tags: ['Design', 'Dark Theme', 'GTM'],
-      img: 'site_etz.png'
+      img: 'site_etz.png',
+      glow: 'rgba(74, 140, 97, 0.28)'  // verde — cor ETZ
     }
   ];
 
@@ -1755,6 +1785,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function updateHoloCard(anim) {
     const p = portProjects[holoCurrent];
     const card = document.getElementById('holoCard');
+    const img  = document.getElementById('holoScreenImg');
+    const g    = p.glow;
 
     if (anim) {
       card.classList.remove('slide-right', 'slide-left');
@@ -1762,10 +1794,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       card.classList.add(anim);
     }
 
-    document.getElementById('holoScreenImg').src = p.img;
-    document.getElementById('holoCardName').textContent = p.name;
-    document.getElementById('holoCardType').textContent = p.holoType;
-    document.getElementById('holoCounter').textContent = `${holoCurrent + 1} / ${portProjects.length}`;
+    // glow externo no card
+    card.style.boxShadow = `0 0 80px ${g}, 0 0 160px ${g.replace(/[\d.]+\)$/, '0.12)')}, 0 40px 80px rgba(0,0,0,0.95)`;
+
+    // glow nas 4 bordas internas
+    const top    = card.querySelector('.glow-top');
+    const bottom = card.querySelector('.glow-bottom');
+    const left   = card.querySelector('.glow-left');
+    const right  = card.querySelector('.glow-right');
+    if (top)    top.style.background    = `linear-gradient(180deg, ${g} 0%, transparent 100%)`;
+    if (bottom) bottom.style.background = `linear-gradient(0deg, ${g} 0%, transparent 100%)`;
+    if (left)   left.style.background   = `linear-gradient(90deg, ${g} 0%, transparent 100%)`;
+    if (right)  right.style.background  = `linear-gradient(270deg, ${g} 0%, transparent 100%)`;
+
+    // reset scroll e troca imagem
+    img.classList.add('switching');
+    setTimeout(() => {
+      img.src = p.img;
+      img.classList.remove('switching');
+    }, 200);
 
     document.querySelectorAll('.holo-dot').forEach((d, i) => {
       d.classList.toggle('active', i === holoCurrent);
