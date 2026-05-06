@@ -1916,7 +1916,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     fetch('https://formspree.io/f/xojrwojy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({ nome, whatsapp, email, especialidade, desafio })
+      body: JSON.stringify({ _subject: 'Novo contato - Site ETZ', nome, whatsapp, email, especialidade, desafio })
     })
     .then(res => {
       if (res.ok) {
