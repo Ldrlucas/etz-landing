@@ -772,7 +772,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: inset 0 0 0 2px rgba(255,255,255,0.05);
   }
 
-  /* aresta 3D real — face lateral do celular */
   .phone-edge {
     position: absolute;
     top: 3%; left: 100%;
@@ -966,7 +965,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: scale(1.1);
   }
 
-  /* CARD — sem borda, só glow */
   .holo-card {
     flex: 1;
     border-radius: 14px;
@@ -976,7 +974,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition: box-shadow 0.7s ease;
   }
 
-  /* scan line animada */
   .holo-card::before {
     content: '';
     position: absolute;
@@ -998,7 +995,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     100% { left: 100%; }
   }
 
-  /* glow nas 4 bordas com cor dinâmica */
   .glow-top {
     position: absolute;
     top: 0; left: 0; right: 0;
@@ -1114,6 +1110,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .holo-card.slide-right { animation: holoSlideIn 0.35s ease forwards; }
   .holo-card.slide-left  { animation: holoSlideInLeft 0.35s ease forwards; }
 
+  /* ======================== */
+  /* BOTÃO FLUTUANTE WHATSAPP */
+  /* ======================== */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 998;
+    width: 56px;
+    height: 56px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: all 0.25s ease;
+  }
+  .whatsapp-float:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+  }
+
   /* MOBILE */
   @media (max-width: 768px) {
     nav { padding: 16px 20px; }
@@ -1156,6 +1177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .holo-modal { width: 92vw; max-width: 92vw; padding: 52px 0 0; }
     .holo-screen-wrap { height: 70vh; }
     .holo-nav-btn { width: 36px; height: 36px; font-size: 15px; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
   }
 
   @media (max-width: 400px) {
@@ -1687,6 +1709,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/5545999364740" target="_blank" class="whatsapp-float"
+   onclick="window.dataLayer.push({ event: 'clicou_whatsapp', origem: 'botao_flutuante' });"
+   aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+</a>
+
 <script>
   // =============================
   // dataLayer — ViewContent
@@ -1699,7 +1730,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   // =============================
-  // =============================
   // PORTFÓLIO 3D + HOLOGRÁFICO
   // =============================
   const portProjects = [
@@ -1710,7 +1740,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       desc: 'Plataforma digital completa para clínica de vacinas. Agendamento online, planos e app mobile com experiência fluida.',
       tags: ['React', 'Supabase', 'PWA'],
       img: 'sitevacinum.png',
-      glow: 'rgba(30, 80, 160, 0.28)'  // azul — cor predominante Vacinum
+      glow: 'rgba(30, 80, 160, 0.28)'
     },
     {
       name: 'Dr. Márcio Fiorentini',
@@ -1719,7 +1749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       desc: 'Site focado em conversão para clínica de osteopatia e medicina funcional integrativa. Design sofisticado e copy estratégico.',
       tags: ['Landing Page', 'Meta Ads', 'Conversão'],
       img: 'site_drmarcio.png',
-      glow: 'rgba(160, 120, 40, 0.25)' // dourado — cor predominante Dr. Márcio
+      glow: 'rgba(160, 120, 40, 0.25)'
     },
     {
       name: 'ETZ Publicidade',
@@ -1728,7 +1758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       desc: 'Site institucional dark/editorial para agência especializada em clínicas de saúde. Design, GTM e tracking completo.',
       tags: ['Design', 'Dark Theme', 'GTM'],
       img: 'site_etz.png',
-      glow: 'rgba(74, 140, 97, 0.28)'  // verde — cor ETZ
+      glow: 'rgba(74, 140, 97, 0.28)'
     }
   ];
 
@@ -1739,21 +1769,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     portCurrent = i;
     const p = portProjects[i];
 
-    // atualiza celular
     const phoneImg = document.getElementById('portPhoneImg');
     phoneImg.style.animation = 'none';
     phoneImg.src = p.img;
     phoneImg.offsetHeight;
     phoneImg.style.animation = '';
 
-    // atualiza info
     document.getElementById('portInfoName').textContent = p.name;
     document.getElementById('portInfoType').textContent = p.type;
     document.getElementById('portInfoDesc').textContent = p.desc;
     document.getElementById('portInfoTags').innerHTML =
       p.tags.map(t => `<span class="port-info-tag">${t}</span>`).join('');
 
-    // atualiza thumbs
     document.querySelectorAll('.port-thumb').forEach((th, idx) => {
       th.classList.toggle('active', idx === i);
     });
@@ -1794,10 +1821,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       card.classList.add(anim);
     }
 
-    // glow externo no card
     card.style.boxShadow = `0 0 80px ${g}, 0 0 160px ${g.replace(/[\d.]+\)$/, '0.12)')}, 0 40px 80px rgba(0,0,0,0.95)`;
 
-    // glow nas 4 bordas internas
     const top    = card.querySelector('.glow-top');
     const bottom = card.querySelector('.glow-bottom');
     const left   = card.querySelector('.glow-left');
@@ -1807,7 +1832,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (left)   left.style.background   = `linear-gradient(90deg, ${g} 0%, transparent 100%)`;
     if (right)  right.style.background  = `linear-gradient(270deg, ${g} 0%, transparent 100%)`;
 
-    // reset scroll e troca imagem
     img.classList.add('switching');
     setTimeout(() => {
       img.src = p.img;
@@ -1825,7 +1849,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       .join('');
   }
 
-  // Teclado
   document.addEventListener('keydown', e => {
     if (!document.getElementById('holoOverlay').classList.contains('open')) return;
     if (e.key === 'ArrowRight') holoNav(1);
@@ -1833,7 +1856,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (e.key === 'Escape')     closeHoloModal();
   });
 
-  // Touch swipe
   let holoTouchStart = 0;
   const holoCardEl = document.getElementById('holoCard');
   if (holoCardEl) {
@@ -1902,7 +1924,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.disabled = true;
     btn.textContent = 'Enviando...';
 
-    // Dispara evento Lead no dataLayer
     window.dataLayer.push({
       event: 'Lead',
       lead_nome: nome,
@@ -1912,7 +1933,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       origem: 'formulario_site'
     });
 
-    // Envia para Formspree (substitua pelo seu endpoint)
     fetch('https://formspree.io/f/xojrwojy', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -1927,8 +1947,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     })
     .catch(() => {
-      // Fallback: mesmo com erro no Formspree, mostra sucesso
-      // (o evento já foi disparado no dataLayer)
       document.getElementById('formFields').classList.add('hidden');
       document.getElementById('formSuccess').classList.add('visible');
     })
